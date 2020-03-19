@@ -127,7 +127,8 @@ var WiggleRenderer = /*#__PURE__*/function (_Renderer) {
       ctx.fillStyle = 'white'; // update status
 
       if (isPlayer) {
-        document.getElementById('wiggle-length').innerHTML = 'Wiggle Length: ' + w.bodyParts.length;
+        document.getElementById('wiggle-length').innerHTML = '<strong>Wiggle Length</strong>: ' + w.bodyParts.length;
+        document.getElementById('player-name').innerHTML = '<strong>Player Name</strong>: ' + w.friendlyName;
       }
     }
   }, {

@@ -41,6 +41,9 @@ var Wiggle = /*#__PURE__*/function (_DynamicObject) {
         },
         bodyLength: {
           type: _lanceGg.BaseTypes.TYPES.INT16
+        },
+        friendlyName: {
+          type: _lanceGg.BaseTypes.TYPES.STRING
         }
       }, _get(_getPrototypeOf(Wiggle), "netScheme", this));
     }
@@ -64,11 +67,12 @@ var Wiggle = /*#__PURE__*/function (_DynamicObject) {
 
       this.direction = other.direction;
       this.bodyLength = other.bodyLength;
+      this.friendlyName = other.friendlyName;
     }
   }, {
     key: "toString",
     value: function toString() {
-      return "Wiggle::".concat(_get(_getPrototypeOf(Wiggle.prototype), "toString", this).call(this), " direction=").concat(this.direction, " length=").concat(this.bodyLength);
+      return "Wiggle::".concat(_get(_getPrototypeOf(Wiggle.prototype), "toString", this).call(this), " direction=").concat(this.direction, " length=").concat(this.bodyLength, " name=").concat(this.friendlyName);
     }
   }]);
 

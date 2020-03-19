@@ -5,7 +5,8 @@ export default class Wiggle extends DynamicObject {
     static get netScheme() {
         return Object.assign({
             direction: { type: BaseTypes.TYPES.FLOAT32 },
-            bodyLength: { type: BaseTypes.TYPES.INT16 }
+            bodyLength: { type: BaseTypes.TYPES.INT16 },
+            friendlyName : { type: BaseTypes.TYPES.STRING }
         }, super.netScheme);
     }
 

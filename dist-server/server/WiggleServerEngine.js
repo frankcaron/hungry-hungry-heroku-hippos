@@ -77,6 +77,7 @@ var WiggleServerEngine = /*#__PURE__*/function (_ServerEngine) {
       newAI.turnDirection = 1;
       newAI.bodyLength = this.gameEngine.startBodyLength;
       newAI.playerId = 0;
+      newAI.friendlyName = "Baddie #" + Math.floor(Math.random() * 100);
       this.gameEngine.addObjectToWorld(newAI);
     }
   }, {
@@ -90,6 +91,7 @@ var WiggleServerEngine = /*#__PURE__*/function (_ServerEngine) {
       player.direction = 0;
       player.bodyLength = this.gameEngine.startBodyLength;
       player.playerId = socket.playerId;
+      player.friendlyName = "Frank";
       this.gameEngine.addObjectToWorld(player);
     }
   }, {

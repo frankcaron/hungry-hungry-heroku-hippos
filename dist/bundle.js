@@ -13557,6 +13557,9 @@ var Wiggle = /*#__PURE__*/function (_DynamicObject) {
         },
         bodyLength: {
           type: __WEBPACK_IMPORTED_MODULE_0_lance_gg__["BaseTypes"].TYPES.INT16
+        },
+        friendlyName: {
+          type: __WEBPACK_IMPORTED_MODULE_0_lance_gg__["BaseTypes"].TYPES.STRING
         }
       }, _get(_getPrototypeOf(Wiggle), "netScheme", this));
     }

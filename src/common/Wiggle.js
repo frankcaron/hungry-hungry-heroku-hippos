@@ -19,9 +19,10 @@ export default class Wiggle extends DynamicObject {
         super.syncTo(other);
         this.direction = other.direction;
         this.bodyLength = other.bodyLength;
+        this.friendlyName = other.friendlyName;
     }
 
     toString() {
-        return `Wiggle::${super.toString()} direction=${this.direction} length=${this.bodyLength}`;
+        return `Wiggle::${super.toString()} direction=${this.direction} length=${this.bodyLength} name=${this.friendlyName}`;
     }
 }

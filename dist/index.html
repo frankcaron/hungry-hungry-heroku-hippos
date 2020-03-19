@@ -1,14 +1,14 @@
 <html>
     <head>
-        <title>Wiggle snake game</title>
+        <title>Hungry Hungry Heroku Hipps - A Salesforce Multiplayer Game (Powered By Lance.GG)</title>
         <style>
           body {
-            background-color: CornflowerBlue;
+            background-color: #215ca0;
             margin:0;
             padding:0;
             overflow: hidden;
             color:white;
-            font-family:"Courier", Courier, sans-serif;
+            font-family:"Roboto", sans-serif;
             font-size: 20px;
           }
           a {
@@ -57,13 +57,58 @@
               opacity: 1;
               pointer-events: all;
           }
+          .sf_logo {
+            width: 10em;
+            margin: 1em;
+          }
+          #wiggle-length {
+            position: absolute;
+            right: 1em;
+            bottom: 1em;
+          }
+          #player-name {
+            position: absolute;
+            right: 1em;
+            bottom: 2.5em;
+          }
+          #name-entry {
+            width: 100%;
+            padding: 50px;
+            text-align: center;
+            display: none;
+          }
+          #name-form {
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(171, 174, 248, 0.616);
+            border: 1px solid #fff;
+          }
+          #nameField {
+            width: 300px;
+            font-size: 20pt;
+          }
+          #nameSubmit {
+            font-size: 20pt;
+          }
+
         </style>
 
     </head>
     <body>
-        <div id="logo" class="textBox bottomRight">Powered By: <a href="https://lance.gg">LANCE.GG</a> multiplayer</div>
+        <div id="name-entry">
+          <div id="name-form">
+            <input id="nameField" name="nameSubmitVal" type="text" placeholder="Enter your player name here.." />
+            <button id="nameSubmit">Play!</button>
+          </div>
+        </div>  
+        <div id="logo"><img class="sf_logo" src="https://c1.sfdcstatic.com/content/dam/sfdc-docs/www/resources/campaign-assets/live-long-and-propser/images/logo.png" /></div>
+        <div id="player-name" class="textBox"></div>
         <div id="wiggle-length" class="textBox"></div>
-        <button id="tryAgain" disabled>Try Again ?</button>
+        
+        <button id="tryAgain" disabled>Try Again?</button>
         <script src="bundle.js" type="text/javascript"></script>
     </body>
 </html>

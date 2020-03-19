@@ -30680,11 +30680,12 @@ var WiggleRenderer = /*#__PURE__*/function (_Renderer) {
       ctx.fillStyle = 'black';
       this.drawCircle(eye1.x, eye1.y, game.eyeRadius, true);
       this.drawCircle(eye2.x, eye2.y, game.eyeRadius, true);
-      ctx.fillStyle = 'white'; // update status
+      ctx.fillStyle = 'white';
+      ctx.font = "0.25px Roboto";
+      ctx.fillText(w.friendlyName, w.position.x - w.friendlyName.length / 2 + 2.5, w.position.y - game.bodyRadius + 0.5); // update status
 
       if (isPlayer) {
-        document.getElementById('wiggle-length').innerHTML = '<strong>Wiggle Length</strong>: ' + w.bodyParts.length;
-        document.getElementById('player-name').innerHTML = '<strong>Player Name</strong>: ' + w.friendlyName;
+        document.getElementById('wiggle-length').innerHTML = '<strong>Wiggle Length</strong>: ' + w.bodyParts.length; //document.getElementById('player-name').innerHTML = '<strong>Player Name</strong>: ' + w.friendlyName;
       }
     }
   }, {

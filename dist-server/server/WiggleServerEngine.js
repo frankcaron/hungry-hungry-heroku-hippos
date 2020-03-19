@@ -91,7 +91,7 @@ var WiggleServerEngine = /*#__PURE__*/function (_ServerEngine) {
       player.direction = 0;
       player.bodyLength = this.gameEngine.startBodyLength;
       player.playerId = socket.playerId;
-      player.friendlyName = "Frank";
+      player.friendlyName = "Bobby";
       this.gameEngine.addObjectToWorld(player);
     }
   }, {

@@ -62,10 +62,9 @@ var WiggleServerEngine = /*#__PURE__*/function (_ServerEngine) {
         });
         this.gameEngine.addObjectToWorld(newF);
       }
+      /* for (let ai = 0; ai < this.gameEngine.aiCount; ai++)
+          this.addAI(); */
 
-      for (var ai = 0; ai < this.gameEngine.aiCount; ai++) {
-        this.addAI();
-      }
     }
   }, {
     key: "addAI",
@@ -120,8 +119,7 @@ var WiggleServerEngine = /*#__PURE__*/function (_ServerEngine) {
     key: "wiggleHitWiggle",
     value: function wiggleHitWiggle(w1, w2) {
       if (!(w2.id in this.gameEngine.world.objects) || !(w1.id in this.gameEngine.world.objects)) return;
-      this.gameEngine.removeObjectFromWorld(w1);
-      if (w1.AI) this.addAI();
+      this.gameEngine.removeObjectFromWorld(w1); //if (w1.AI) this.addAI();
     }
   }, {
     key: "stepLogic",

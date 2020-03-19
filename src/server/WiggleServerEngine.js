@@ -16,8 +16,8 @@ export default class WiggleServerEngine extends ServerEngine {
             let newF = new Food(this.gameEngine, null, { position: this.gameEngine.randPos() });
             this.gameEngine.addObjectToWorld(newF);
         }
-        for (let ai = 0; ai < this.gameEngine.aiCount; ai++)
-            this.addAI();
+        /* for (let ai = 0; ai < this.gameEngine.aiCount; ai++)
+            this.addAI(); */
     }
 
     addAI() {
@@ -62,7 +62,7 @@ export default class WiggleServerEngine extends ServerEngine {
             return;
 
         this.gameEngine.removeObjectFromWorld(w1);
-        if (w1.AI) this.addAI();
+        //if (w1.AI) this.addAI();
     }
 
     stepLogic() {

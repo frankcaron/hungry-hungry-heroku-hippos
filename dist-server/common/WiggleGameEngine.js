@@ -68,7 +68,7 @@ var WiggleGameEngine = /*#__PURE__*/function (_GameEngine) {
       eatDistance: 0.3,
       collideDistance: 0.3,
       startBodyLength: 10,
-      aiCount: 3,
+      aiCount: 0,
       directionStop: 100
     });
     return _this;

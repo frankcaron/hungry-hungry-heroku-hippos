@@ -16,7 +16,7 @@ let requestHandler = server.listen(PORT, () => console.log(`Listening on ${ PORT
 const io = socketIO(requestHandler);
 
 // Game Instances
-const gameEngine = new WiggleGameEngine({ traceLevel: Lib.Trace.TRACE_ALL });
+const gameEngine = new WiggleGameEngine({ traceLevel: Lib.Trace.TRACE_NONE });
 const serverEngine = new WiggleServerEngine(io, gameEngine, { debug: {}, updateRate: 10 });
 
 // start the game

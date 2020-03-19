@@ -37,7 +37,13 @@ var WiggleClientEngine = /*#__PURE__*/function (_ClientEngine) {
 
     _classCallCheck(this, WiggleClientEngine);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(WiggleClientEngine).call(this, gameEngine, options, _WiggleRenderer["default"])); // show try-again button
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(WiggleClientEngine).call(this, gameEngine, options, _WiggleRenderer["default"])); // enter name
+
+    document.querySelector('#nameSubmit').addEventListener('click', function () {
+      _this.updateName(document.querySelector('#nameField').value);
+
+      document.querySelector('#name-entry').classList.add('hidden');
+    }); // show try-again button
 
     gameEngine.on('objectDestroyed', function (obj) {
       if (obj.playerId === gameEngine.playerId) {
@@ -68,6 +74,14 @@ var WiggleClientEngine = /*#__PURE__*/function (_ClientEngine) {
       if (e.touches) e = e.touches.item(0);
       this.mouseX = e.pageX;
       this.mouseY = e.pageY;
+    }
+  }, {
+    key: "updateName",
+    value: function updateName(newName) {
+      var player = this.gameEngine.world.queryObject({
+        playerId: this.gameEngine.playerId
+      });
+      player.friendlyName = newName;
     }
   }, {
     key: "sendMouseAngle",

@@ -6,6 +6,13 @@ export default class WiggleClientEngine extends ClientEngine {
     constructor(gameEngine, options) {
         super(gameEngine, options, WiggleRenderer);
 
+        // enter name
+        document.querySelector('#nameSubmit').addEventListener('click', () => {
+            this.updateName(document.querySelector('#nameField').value);
+            document.querySelector('#name-entry').classList.add('hidden');
+        });
+
+
         // show try-again button
         gameEngine.on('objectDestroyed', (obj) => {
             if (obj.playerId === gameEngine.playerId) {
@@ -34,6 +41,11 @@ export default class WiggleClientEngine extends ClientEngine {
         if (e.touches) e = e.touches.item(0);
         this.mouseX = e.pageX;
         this.mouseY = e.pageY;
+    }
+
+    updateName(newName) {
+        let player = this.gameEngine.world.queryObject({ playerId: this.gameEngine.playerId });
+        player.friendlyName = newName;
     }
 
     sendMouseAngle() {

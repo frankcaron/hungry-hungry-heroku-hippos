@@ -30493,7 +30493,13 @@ var WiggleClientEngine = /*#__PURE__*/function (_ClientEngine) {
 
     _classCallCheck(this, WiggleClientEngine);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(WiggleClientEngine).call(this, gameEngine, options, __WEBPACK_IMPORTED_MODULE_1__client_WiggleRenderer__["a" /* default */])); // show try-again button
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(WiggleClientEngine).call(this, gameEngine, options, __WEBPACK_IMPORTED_MODULE_1__client_WiggleRenderer__["a" /* default */])); // enter name
+
+    document.querySelector('#nameSubmit').addEventListener('click', function () {
+      _this.updateName(document.querySelector('#nameField').value);
+
+      document.querySelector('#name-entry').classList.add('hidden');
+    }); // show try-again button
 
     gameEngine.on('objectDestroyed', function (obj) {
       if (obj.playerId === gameEngine.playerId) {
@@ -30524,6 +30530,14 @@ var WiggleClientEngine = /*#__PURE__*/function (_ClientEngine) {
       if (e.touches) e = e.touches.item(0);
       this.mouseX = e.pageX;
       this.mouseY = e.pageY;
+    }
+  }, {
+    key: "updateName",
+    value: function updateName(newName) {
+      var player = this.gameEngine.world.queryObject({
+        playerId: this.gameEngine.playerId
+      });
+      player.friendlyName = newName;
     }
   }, {
     key: "sendMouseAngle",
@@ -30680,12 +30694,13 @@ var WiggleRenderer = /*#__PURE__*/function (_Renderer) {
       ctx.fillStyle = 'black';
       this.drawCircle(eye1.x, eye1.y, game.eyeRadius, true);
       this.drawCircle(eye2.x, eye2.y, game.eyeRadius, true);
-      ctx.fillStyle = 'white';
+      ctx.fillStyle = 'white'; //draw name
+
       ctx.font = "0.25px Roboto";
       ctx.fillText(w.friendlyName, w.position.x - w.friendlyName.length / 2 + 2.5, w.position.y - game.bodyRadius + 0.5); // update status
 
       if (isPlayer) {
-        document.getElementById('wiggle-length').innerHTML = '<strong>Wiggle Length</strong>: ' + w.bodyParts.length; //document.getElementById('player-name').innerHTML = '<strong>Player Name</strong>: ' + w.friendlyName;
+        document.getElementById('wiggle-length').innerHTML = '<strong>Wiggle Length</strong>: ' + w.bodyParts.length;
       }
     }
   }, {

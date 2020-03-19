@@ -30,7 +30,7 @@ var requestHandler = server.listen(PORT, function () {
 var io = (0, _socket["default"])(requestHandler); // Game Instances
 
 var gameEngine = new _WiggleGameEngine["default"]({
-  traceLevel: _lanceGg.Lib.Trace.TRACE_ALL
+  traceLevel: _lanceGg.Lib.Trace.TRACE_NONE
 });
 var serverEngine = new _WiggleServerEngine["default"](io, gameEngine, {
   debug: {},
